@@ -142,10 +142,10 @@ dist
 .svelte-kit
 
 # public scripts
-public/favorites.js
-public/items.js
-public/list.js
-public/quotes.js
-public/session.js
+favorites.js
+items.js
+lists.js
+quotes.js
+session.js
 
 # End of https://www.toptal.com/developers/gitignore/api/node
