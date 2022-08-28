@@ -1,4 +1,4 @@
-var baseUrl = 'http://localhost:3000';
+var baseUrl = window.location.origin;
 
 document.addEventListener('DOMContentLoaded', function() {
   searchQuote();
@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 function searchQuote() {
   var quoteText = document.getElementById('quoteText');
   var authorText = document.getElementById('authorText');
-  fetch(baseUrl + '/quotes', {
+  fetch(baseUrl + '/random-quote', {
         method: 'GET'
     })
     .then(function(response) {
@@ -16,8 +16,8 @@ function searchQuote() {
     })
     .then(function(data) {
       var quote = JSON.parse(data);
-      quoteText.textContent = quote;
-      authorText.textContent = quote;
+      quoteText.textContent = quote.text;
+      authorText.textContent = quote.author;
     })
     .catch(function(err) {
       authorText.textContent = '-';
